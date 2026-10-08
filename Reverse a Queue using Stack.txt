@@ -1,0 +1,13 @@
+﻿#include <stdio.h>
+
+void reverseQueue(int queue[], int *front, int *rear) {
+    int stack[100], top = -1;
+    while (*front <= *rear) {
+        stack[++top] = queue[(*front)++];
+    }
+    *front = 0;
+    *rear = -1;
+    while (top != -1) {
+        queue[++(*rear)] = stack[top--];
+    }
+}
